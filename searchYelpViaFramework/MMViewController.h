@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <YelpKit/YelpKit.h>
+#import "APICredentials.h"
 @interface MMViewController : UIViewController
+
+- (IBAction)searchButtonPressed:(id)sender;
+- (void)connectToYelp:(NSString*)urlString;
 
 @end

@@ -1,21 +1,75 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2519" systemVersion="12A206j" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1856"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--View Controller-->
         <scene sceneID="5">
             <objects>
                 <viewController id="2" customClass="MMViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cSc-SP-OlU">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="2" id="LNU-Ia-tam"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CHw-cj-au1">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="Iee-rZ-v6W"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Search">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="searchButtonPressed:" destination="2" eventType="touchUpInside" id="le1-gM-Agm"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Business Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="285-Kq-bec">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="llv-fa-kHA">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="285-Kq-bec" firstAttribute="top" secondItem="3" secondAttribute="top" constant="69" id="JCb-kn-Siq"/>
+                            <constraint firstItem="CHw-cj-au1" firstAttribute="leading" secondItem="cSc-SP-OlU" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="KeX-MC-Ggs"/>
+                            <constraint firstAttribute="trailing" secondItem="llv-fa-kHA" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Pn3-ir-98l"/>
+                            <constraint firstItem="cSc-SP-OlU" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="Pvb-gw-YLu"/>
+                            <constraint firstItem="285-Kq-bec" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Uff-VB-eYc"/>
+                            <constraint firstAttribute="trailing" secondItem="CHw-cj-au1" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ZQL-Wv-lIT"/>
+                            <constraint firstItem="CHw-cj-au1" firstAttribute="baseline" secondItem="cSc-SP-OlU" secondAttribute="baseline" type="default" id="b0Y-uZ-W5w"/>
+                            <constraint firstAttribute="trailing" secondItem="285-Kq-bec" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="byB-1S-06K"/>
+                            <constraint firstItem="llv-fa-kHA" firstAttribute="top" secondItem="3" secondAttribute="top" constant="106" id="csi-3s-2vx"/>
+                            <constraint firstItem="cSc-SP-OlU" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="hvD-S7-gUV"/>
+                            <constraint firstItem="llv-fa-kHA" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="mq5-py-sap"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addressOutlet" destination="llv-fa-kHA" id="iBu-pQ-E2n"/>
+                        <outlet property="businessNameOutlet" destination="285-Kq-bec" id="ccS-oF-qIY"/>
+                        <outlet property="searchFieldTextField" destination="cSc-SP-OlU" id="hvt-1u-zvL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-343" y="43"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
